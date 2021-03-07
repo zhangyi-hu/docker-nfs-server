@@ -5,8 +5,10 @@ If your Docker host has [AppArmor](https://wiki.ubuntu.com/AppArmor) activated, 
 1. Ensure you have the `apparmor-utils` installed package installed on the Docker host. e.g. for Debian or Ubuntu:
 
        $ sudo apt-get install apparmor-utils
-
-1. Create a file on the Docker host with the following contents:
+   
+1. Ensure you have the `` installed on the Docker host. e.g. for Debian or Ubuntu:
+       $ sudo apt-get install lxc
+3. Create a file on the Docker host with the following contents:
 
        #include <tunables/global>
        profile erichough-nfs flags=(attach_disconnected,mediate_deleted) {
